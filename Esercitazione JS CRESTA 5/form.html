@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulo di Contatto</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .contact-form {
+      background-color: #ffffff;
+      max-width: 450px;
+      width: 100%;
+      margin: 20px;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-top: 6px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #000000;
+      outline: none;
+    }
+
+    .error-message {
+      color: #ff0000;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .success-message {
+      color: #28a745;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .submit-button {
+      background-color: #ff0000;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #000000;
+    }
+
+
+    @media (max-width: 600px) {
+      .contact-form {
+        padding: 20px;
+      }
+
+      .submit-button {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="contact-form">
+  <h2>Contattaci</h2>
+  <h4 class="text-4">Riceverai un link per accedere direttamente al configuratore Ducati</h4>
+  <form id="contactForm" onsubmit="validateForm(event)">
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name">
+      <div id="nameError" class="error-message"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email">
+      <div id="emailError" class="error-message"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Messaggio</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="submit-button">Invia</button>
+    <div id="formSuccess" class="success-message"></div>
+  </form>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
